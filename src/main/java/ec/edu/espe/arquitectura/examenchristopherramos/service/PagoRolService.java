@@ -41,6 +41,6 @@ public class PagoRolService {
                 .valorTotal(null)
                 .valorReal(null)
                 .build();
-        return empresa;
+        return pagoRol;
     }
 }
