@@ -12,14 +12,14 @@ import ec.edu.espe.arquitectura.examenchristopherramos.service.PagoRolService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/api/v1/empresa")
+@RequestMapping("/api/v1/pago-rol")
 @RequiredArgsConstructor
 public class PagoRolController {
 
     private final PagoRolService pagoRolService;
 
     @PostMapping
-    public ResponseEntity<?> crear(@RequestBody PagoRolRQ pagoRolRQ) {
+    public ResponseEntity<?> realizarPago(@RequestBody PagoRolRQ pagoRolRQ) {
         try {
             pagoRolService.realizarPago(pagoRolRQ);
             return ResponseEntity.ok().body("PagoRol creada");
