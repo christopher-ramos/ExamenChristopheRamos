@@ -7,9 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import ec.edu.espe.arquitectura.examenchristopherramos.controller.dto.EmpresaRQ;
 import ec.edu.espe.arquitectura.examenchristopherramos.controller.dto.PagoRolRQ;
-import ec.edu.espe.arquitectura.examenchristopherramos.service.EmpresaService;
 import ec.edu.espe.arquitectura.examenchristopherramos.service.PagoRolService;
 import lombok.RequiredArgsConstructor;
 
@@ -23,7 +21,7 @@ public class PagoRolController {
     @PostMapping
     public ResponseEntity<?> crear(@RequestBody PagoRolRQ pagoRolRQ) {
         try {
-            pagoRolService.crear(pagoRolRQ);
+            pagoRolService.realizarPago(pagoRolRQ);
             return ResponseEntity.ok().body("PagoRol creada");
         } catch (RuntimeException rte) {
             return ResponseEntity.badRequest().body(rte.getMessage());
